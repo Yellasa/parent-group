@@ -19,6 +19,8 @@ public class BankInfoDO  extends IdEntity<BankInfoDO>
 
     private String bankBranch;
 
+    private String bankName;
+
     public String getDepositBank()
     {
         return depositBank;
@@ -37,5 +39,15 @@ public class BankInfoDO  extends IdEntity<BankInfoDO>
     public void setBankBranch(String bankBranch)
     {
         this.bankBranch = bankBranch;
+    }
+
+    public String getBankName()
+    {
+        return bankName;
+    }
+
+    public void setBankName(String bankName)
+    {
+        this.bankName = bankName;
     }
 }
