@@ -13,6 +13,7 @@
         <module>my-springboot</module>
         <module>start-up</module>
         <module>dao</module>
+        <module>erueka-regist</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -36,6 +37,7 @@
         <fastjson.version>1.2.39</fastjson.version>
         <mvn.druid.version>1.0.18</mvn.druid.version>
         <mvn.fastjson.version>1.2.44</mvn.fastjson.version>
+        <spring-cloud.version>Edgware.SR1</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -68,7 +70,23 @@
                 <artifactId>fastjson</artifactId>
                 <version>${mvn.fastjson.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-    
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
