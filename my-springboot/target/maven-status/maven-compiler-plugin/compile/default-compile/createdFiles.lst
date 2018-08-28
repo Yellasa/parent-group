@@ -1,0 +1,4 @@
+com\yt\stude\mysb\service\impl\BankInfoServiceImpl.class
+com\yt\stude\mysb\dao\BankInfoDao.class
+com\yt\stude\mysb\domain\BankInfoDO.class
+com\yt\stude\mysb\service\BankInfoService.class
