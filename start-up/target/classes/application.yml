@@ -1,6 +1,0 @@
-server:
-    port: 8081
-    context-path: /demo/api/v1
-spring:
-  profiles:
-    active: dev

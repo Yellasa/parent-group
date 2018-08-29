@@ -33,6 +33,12 @@ public class SecondController
         return "test.name:" + defineEntity.getPname() + ", test.password:" + defineEntity.getPassword();
     }
 
+    @GetMapping("/{id}")
+    BankInfoDO findById(@PathVariable("id")Long id){
+        BankInfoDO bankInfoDO = bankInfoService.selectById(id);
+        return bankInfoDO;
+    }
+
     @PostMapping("save")
     boolean bankInfo(@RequestBody BankInfoDO bankInfoDO){
         boolean insert = bankInfoService.insert(bankInfoDO);
