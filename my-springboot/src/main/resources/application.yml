@@ -6,3 +6,8 @@ spring:
     active: @profilesActive@
   application:
     name:  service-b
+
+service-b:
+  ribbon:
+    # 随机策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

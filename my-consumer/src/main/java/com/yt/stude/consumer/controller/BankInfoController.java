@@ -1,7 +1,9 @@
 package com.yt.stude.consumer.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.yt.stude.consumer.dto.BankInfoDO;
 import com.yt.stude.consumer.feign.BankInfoFeignClient;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -39,5 +41,34 @@ public class BankInfoController
     public BankInfoDO findFeignById2(@PathVariable("id")Long id) {
         return restTemplate.getForObject("http://SERVICE-B/mysb/{1}",BankInfoDO.class,id);
 
+    }
+
+    /**
+     * 使用Hystrix断路器
+     * @param id
+     * @return
+     */
+    @HystrixCommand(fallbackMethod = "fallback")
+    @GetMapping("/hystrix/sucess/{id}")
+    public String findBankInfoSucessHystrix(@PathVariable("id") Long id){
+        return restTemplate.getForObject("http://SERVICE-B/mysb/{1}",BankInfoDO.class,id).toString();
+    }
+
+    /**
+     * 使用Hystrix断路器
+     * @param id
+     * @return
+     */
+    @HystrixCommand(fallbackMethod = "fallback")
+    @GetMapping("/hystrix/fail/{id}")
+    public String findBankInfoFailHystrix(@PathVariable("id") Long id) throws InterruptedException
+    {
+        int i = 1/0;
+        return restTemplate.getForObject("http://SERVICE-B/mysb/{1}",BankInfoDO.class,id).toString();
+    }
+
+    private String fallback(Long id,Throwable throwable){
+        LoggerFactory.getLogger(BankInfoController.class).info("========{}=============",throwable.getMessage());
+        return "Error:"+id;
     }
 }

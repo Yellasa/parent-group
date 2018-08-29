@@ -57,4 +57,15 @@ public class BankInfoDO
     {
         this.bankName = bankName;
     }
+
+    @Override
+    public String toString()
+    {
+        return "BankInfoDO{" +
+                "id=" + id +
+                ", depositBank='" + depositBank + '\'' +
+                ", bankBranch='" + bankBranch + '\'' +
+                ", bankName='" + bankName + '\'' +
+                '}';
+    }
 }

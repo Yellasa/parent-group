@@ -1,8 +1,12 @@
 package com.yt.stude.consumer.feign;
 
 import com.yt.stude.consumer.dto.BankInfoDO;
+import com.yt.stude.consumer.feign.fallback.BankInfoFeignClientFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * <br/>
@@ -13,14 +17,13 @@ import org.springframework.web.bind.annotation.*;
  * @Modified by:
  * @since JDK 1.8
  */
-@FeignClient(name = "service-b")
-@RequestMapping("mysb")
+@FeignClient(name = "service-b",fallback = BankInfoFeignClientFallback.class)
 public interface BankInfoFeignClient
 {
-    @GetMapping("{id}")
+    @GetMapping("mysb/{id}")
     BankInfoDO findById(@PathVariable("id")Long id);
 
-    @PostMapping("save")
+    @PostMapping("mysb/save")
     void save(@RequestBody  BankInfoDO bankInfoDO);
 
 }
