@@ -53,4 +53,26 @@
         </dependency>
     </dependencies>
 
+
+    <profiles>
+        <profile>
+            <!-- 本地开发环境 -->
+            <id>peer1</id>
+            <properties>
+                <profilesActive>peer1</profilesActive>
+            </properties>
+            <activation>
+                <!-- 设置默认激活这个配置 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <!-- 测试环境 -->
+            <id>peer2</id>
+            <properties>
+                <profilesActive>peer2</profilesActive>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>

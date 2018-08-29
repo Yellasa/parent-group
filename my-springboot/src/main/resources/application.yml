@@ -3,6 +3,6 @@ server:
 #    context-path: /consumer/api/v1
 spring:
   profiles:
-    active: dev
+    active: @profilesActive@
   application:
     name:  service-b

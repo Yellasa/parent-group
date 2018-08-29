@@ -52,3 +52,7 @@ eureka:
     metadata-map:
         #自定义元数据  key/value 都可以随便写
         my-metadata: 自定义元数据
+user.userServiceUrl: http://${spring.application.name}/
+
+server:
+  port: 8801

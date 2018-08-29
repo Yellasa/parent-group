@@ -1,5 +1,6 @@
 E:\ayangting\workspace\ty\my-parent\dao\src\main\java\com\yt\stude\dao\base\CoreServiceImpl.java
 E:\ayangting\workspace\ty\my-parent\dao\src\main\java\com\yt\stude\dao\base\IdEntity.java
+E:\ayangting\workspace\ty\my-parent\dao\src\main\java\com\yt\stude\dao\base\config\MybatisPlusConfig.java
 E:\ayangting\workspace\ty\my-parent\dao\src\main\java\com\yt\stude\dao\base\CoreService.java
 E:\ayangting\workspace\ty\my-parent\dao\src\main\java\com\yt\stude\dao\base\util\HttpContextUtils.java
 E:\ayangting\workspace\ty\my-parent\dao\src\main\java\com\yt\stude\dao\base\BaseDao.java
