@@ -1,0 +1,36 @@
+初探springcloud  及 采坑经历
+坑1、feignClient 添加requestMapping 启动报错
+坑2、生产端添加{server.context-path}， feignClient无法找到路径
+
+
+                springcloud + mybatis-plus + maven聚合
+                        haerueka
+            zuul  feignClients   hystrix（熔断）  ribbon(负载均衡)
+
+
+erueka 自我保护模式 心跳默认90秒
+
+
+hystrix（熔断） 2种方式
+1、@HystrixCommand(fallbackMethod = "方法名")
+2、接口实现（副逻辑）
+3、 3种状态   闭合、打开、半开(允许部分请求尝试调用依赖服务)
+4、commandProperties 配置，优先级排序 : 代码里面的配置>配置文件里面的配置
+
+
+feign
+1)对请求和相应，提供压缩支持
+feign.compression.request.enable=true
+feign.compression.response.enable=true
+
+2)请求日志
+logging:
+  level:
+    com.yt.stude.consumer.feign: debug
+
+3) fallbackFactory 打印服务降级原因
+
+
+
+
+

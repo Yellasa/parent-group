@@ -1,6 +1,7 @@
 package com.yt.stude.consumer.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.yt.stude.consumer.dto.BankInfoDO;
 import com.yt.stude.consumer.feign.BankInfoFeignClient;
 import org.slf4j.LoggerFactory;
@@ -44,18 +45,19 @@ public class BankInfoController
     }
 
     /**
-     * 使用Hystrix断路器
+     * 使用Hystrix降级
      * @param id
      * @return
      */
-    @HystrixCommand(fallbackMethod = "fallback")
+    @HystrixCommand(fallbackMethod = "fallback",
+            commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMillisecends",value = "5000")},
+            threadPoolProperties = {@HystrixProperty(name = "coreSize",value = "1"),@HystrixProperty(name = "maxQueueSize",value = "5")})
     @GetMapping("/hystrix/sucess/{id}")
     public String findBankInfoSucessHystrix(@PathVariable("id") Long id){
         return restTemplate.getForObject("http://SERVICE-B/mysb/{1}",BankInfoDO.class,id).toString();
     }
 
     /**
-     * 使用Hystrix断路器
      * @param id
      * @return
      */

@@ -11,3 +11,8 @@ spring:
 feign:
   hystrix:
     enabled: true
+
+# 定义为debug 是因为feign的logger.level 只对debug做响应
+logging:
+  level:
+    com.yt.stude.consumer.feign: debug
