@@ -13,6 +13,7 @@
         <module>dao</module>
         <module>my-consumer</module>
         <module>erueka-server</module>
+        <module>dashboard</module>
     </modules>
     <packaging>pom</packaging>
 
