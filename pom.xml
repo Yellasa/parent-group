@@ -8,9 +8,9 @@
     <artifactId>parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>java8demo</module>
-        <module>my-springboot</module>
+        <!--<module>java8demo</module>-->
         <module>dao</module>
+        <module>my-springboot</module>
         <module>my-consumer</module>
         <module>erueka-server</module>
         <module>dashboard</module>
