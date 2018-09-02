@@ -1,5 +1,3 @@
-server:
-    port: 8081
 #    context-path: /consumer/api/v1
 spring:
   profiles:

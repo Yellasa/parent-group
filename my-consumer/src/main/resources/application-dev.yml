@@ -52,3 +52,17 @@ eureka:
     metadata-map:
         #自定义元数据  key/value 都可以随便写
         my-metadata: 自定义元数据
+
+# 解决网关超时报错的问题
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+# 解决网关超时报错的问题
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
