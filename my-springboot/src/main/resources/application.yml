@@ -1,4 +1,5 @@
-#    context-path: /consumer/api/v1
+server:
+    context-path: /provider/api/v1
 spring:
   profiles:
     active: @profilesActive@

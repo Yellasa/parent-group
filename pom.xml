@@ -12,9 +12,11 @@
         <module>dao</module>
         <module>my-springboot</module>
         <module>my-consumer</module>
+        <module>other-consumer</module>
         <module>erueka-server</module>
         <module>dashboard</module>
         <module>geteway-zuul</module>
+        <module>turbine</module>
     </modules>
     <packaging>pom</packaging>
 

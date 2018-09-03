@@ -34,9 +34,8 @@ public class BankInfoController
     }
 
     @PostMapping("/feign/post")
-    public String post(@RequestBody BankInfoDO bankInfoDO){
+    public void post(@RequestBody BankInfoDO bankInfoDO){
          this.bankInfoFeignClient.save(bankInfoDO);
-         return "插入成功！";
     }
 
     @GetMapping("/banlance/bankinfo/id/{id}")

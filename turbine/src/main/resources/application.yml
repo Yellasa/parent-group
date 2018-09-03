@@ -1,0 +1,18 @@
+server:
+    port: 8031
+spring:
+  application:
+    name: hystrix-turbine
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123@peer1:8761/eureka/,http://admin:123@peer2:8762/eureka/
+  instance:
+    perfer-ip-address: true
+
+
+turbine:
+  app-config: service-a,service-b,service-c
+  cluster-name-expression: "'default'"
+  combine-host-port: true
