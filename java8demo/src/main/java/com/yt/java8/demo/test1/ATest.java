@@ -4,6 +4,8 @@ import com.yt.java8.demo.domain.TriFunction;
 
 import java.awt.*;
 import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -33,5 +35,11 @@ public class ATest
         BigDecimal min = momentMap.values().stream().min((u1, u2) -> u1.compareTo(u2)).get();
         System.out.println(max);
         System.out.println(min);
+
+
+        Calendar sartTime = Calendar.getInstance();
+        sartTime.setTime(new Date(1535410800972L));
+        Integer start = sartTime.get(Calendar.HOUR_OF_DAY) * 3600 + sartTime.get(Calendar.MINUTE) * 60 + sartTime.get(Calendar.SECOND);
+        System.out.println(start);
     }
 }

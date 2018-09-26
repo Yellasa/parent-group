@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms-discovery-eureka-ha
+    name: yt-eureka-ha
   profiles:
     active: @profilesActive@
 
@@ -39,6 +39,7 @@ eureka:
   instance:
     hostname: peer2
     prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
     serviceUrl:
       # 将自己注册到peer2这个Eureka上面去

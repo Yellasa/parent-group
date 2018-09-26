@@ -4,7 +4,7 @@ spring:
   profiles:
     active: @profilesActive@
   application:
-    name:  service-b
+    name: service-b
 
 service-b:
   ribbon:

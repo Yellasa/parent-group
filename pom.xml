@@ -17,6 +17,7 @@
         <module>dashboard</module>
         <module>geteway-zuul</module>
         <module>turbine</module>
+        <module>write-mybatis</module>
     </modules>
     <packaging>pom</packaging>
 
